@@ -1,8 +1,10 @@
-# main.py
+from data_models.sample import CurrencyReport
+
 
 from fastapi import FastAPI
 
 app = FastAPI(title="MyTaskManager")
+today_usd=CurrencyReport(datetime="10.8.2025", currency="usd",value=300)
 
 @app.get("/")
 def read_root():
@@ -12,7 +14,7 @@ def read_root():
 
 @app.get("/today-USD")
 def return_today_usd():
-    return{"18.8.2025":300}
+    return today_usd
 
 @app.get("/today/EUR")
 def return_today_eur():
