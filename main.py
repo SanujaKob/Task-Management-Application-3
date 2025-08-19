@@ -2,6 +2,8 @@ from data_models.sample import CurrencyReport
 
 
 from fastapi import FastAPI
+app = FastAPI()
+
 
 app = FastAPI(title="MyTaskManager")
 today_usd=CurrencyReport(datetime="10.8.2025", currency="usd",value=300)
